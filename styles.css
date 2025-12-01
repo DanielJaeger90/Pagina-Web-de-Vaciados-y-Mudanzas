@@ -70,6 +70,26 @@ img {
   line-height: 1.2;
 }
 
+/* Botón de Presupuesto en el Header */
+.btn-presupuesto-header {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.btn-presupuesto-header:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+
 /* =======================================
    MENÚ RECUADROS
 ========================================== */
