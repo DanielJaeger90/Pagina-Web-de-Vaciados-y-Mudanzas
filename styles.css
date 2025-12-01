@@ -278,6 +278,21 @@ main section p {
   margin-bottom: 12px;
 }
 
+/* Evitar que textos largos se salgan del contenedor */
+.contacto-info span,
+.contacto-info p {
+  word-break: break-word;      /* rompe palabras largas si es necesario */
+  overflow-wrap: anywhere;     /* compatible con navegadores modernos */
+}
+
+/* Opcional: reducir tamaño de fuente en móviles */
+@media (max-width: 480px) {
+  .contacto-info span,
+  .contacto-info p {
+    font-size: 0.9rem;
+  }
+}
+
 .btn-enviar {
   width: 100%;
   padding: 12px;
@@ -392,8 +407,8 @@ main section p {
 }
 
 /* =======================================
-   GALERÍA (SLIDER)
-========================================== */
+   GALERÍA (SLIDER) - actualizado responsive
+======================================= */
 .slider-container {
   position: relative;
   max-width: 700px;
@@ -412,6 +427,7 @@ main section p {
   box-shadow: 0 25px 50px rgba(0,0,0,0.35);
 }
 
+/* Desktop: imágenes centradas absolutas */
 .slider img {
   position: absolute;
   top: 50%;
@@ -440,18 +456,36 @@ main section p {
   border-radius: 50%;
   color: #fff;
   cursor: pointer;
+  transform: translateY(-50%);
 }
 
 .slider-prev { left: 10px; }
 .slider-next { right: 10px; }
 
+/* ======== MÓVIL & TABLET ======== */
 @media (max-width: 768px) {
   .slider-container { height: 400px; }
   .slider-prev, .slider-next { font-size: 1.5rem; }
+
+  /* Imágenes relativas para no descentrarse */
+  .slider img {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 90%;
+    max-height: 100%;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
   .slider-container { height: 300px; }
+
+  .slider img {
+    max-width: 95%;
+  }
 }
 
 /* =======================================
