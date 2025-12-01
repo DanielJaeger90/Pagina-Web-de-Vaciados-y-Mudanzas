@@ -48,12 +48,12 @@ a {
 .logo-container {
   background: #fff;
   padding: 10px;
-  border-radius: 15px;
-  margin-bottom: 10px;
+  border-radius: 50px;
+  margin-bottom: 30px;
 }
 
 .logo-hero {
-  max-height: 150px;
+  max-height: 200px;
   width: auto;
 }
 
@@ -133,6 +133,229 @@ main section p {
   margin-bottom: 15px;
 }
 
+/* Sección SOBRE NOSOTROS con imagen lateral */
+.sobre-nosotros-section .sobre-nosotros-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.sobre-img {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-img img {
+  width: 70%;
+  max-width: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+
+.resaltado {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-left: 6px solid #007BFF;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 15px;
+}
+
+
+/* Móvil */
+@media (max-width: 768px) {
+  .sobre-nosotros-section .sobre-nosotros-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-img img {
+    width: 50%;
+    max-width: 240px;
+  }
+}
+
+.contacto-section {
+  padding: 50px 20px;
+  background: #f8f8f8;
+}
+
+.contacto-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.contacto-info, 
+.contacto-formulario, 
+.contacto-mapa {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contacto-intro {
+  margin-bottom: 20px;
+}
+
+.contacto-items {
+  margin-bottom: 20px;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.contacto-item img {
+  width: 28px;
+  margin-right: 10px;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  background: #009688;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background: #007f73;
+}
+
+.contacto-mapa iframe {
+  border-radius: 10px;
+}
+
+.contacto-horario {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  font-size: 1.2rem;
+}
+
+.icono-horario {
+  width: 50px;
+  height: 50px;
+}
+
+.horario {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.icono-horario-linea {
+  width: 30px;
+  height: 30px;
+  opacity: 0.9;
+}
+
+/* ──────────────────────────────── */
+/* Sección Por Qué Elegirnos con imagen lateral */
+/* ──────────────────────────────── */
+
+.elegirnos-section {
+  margin-top: 50px;
+}
+
+.elegirnos-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.elegirnos-img img {
+  width: 220px;
+  max-width: 100%;
+}
+
+.elegirnos-texto {
+  max-width: 600px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.elegirnos-texto h2 {
+  margin-bottom: 15px;
+  color: #007BFF; /* tu azul corporativo */
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .elegirnos-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .elegirnos-img img {
+    width: 180px;
+  }
+}
+
+/* ================================
+   Mapa estilizado sección contacto
+================================ */
+.contacto-mapa {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contacto-mapa h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+.mapa-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.mapa-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
 /* ================================
    Servicios con Imagen Lateral
 ================================ */
@@ -161,6 +384,92 @@ main section p {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* ================================
+   Servicios con Imagen Lateral (Portes, Vaciados, Limpieza)
+================================ */
+.servicios-section .servicios-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.servicios-section ul {
+  flex: 1;
+  min-width: 250px;
+  line-height: 1.8;
+  font-weight: 700;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.servicios-img {
+  flex: 1;
+  min-width: 250px;
+}
+
+.servicios-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   Caja del slider / Galería Rotativa
+================================ */
+.galeria-section .slider-container {
+  position: relative;
+  max-width: 800px;        /* ancho máximo de la caja */
+  width: 90%;              /* se adapta en móviles */
+  margin: 30px auto;       /* centrado */
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* sombra más suave */
+  background-color: #fff;   /* fondo blanco */
+  padding: 15px;           /* espacio interno */
+}
+
+.galeria-section .slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.galeria-section .slider img {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Controles de navegación */
+.slider-prev, .slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-prev { left: 10px; }
+.slider-next { right: 10px; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .slider-container { max-width: 95%; }
+  .slider-prev, .slider-next { font-size: 1.5rem; padding: 8px 12px; }
+}
+
+@media (max-width: 480px) {
+  .slider-prev, .slider-next { font-size: 1.2rem; padding: 6px 10px; }
 }
 
 /* ================================
@@ -235,36 +544,61 @@ main section p {
 /* ================================
    Botones Flotantes
 ================================ */
-.whatsapp-btn, .presupuesto-btn {
-  position: fixed;
-  bottom: 20px;
-  padding: 14px 18px;
-  border-radius: 50px;
-  font-size: 18px;
-  color: #fff;
-  font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 999;
-  transition: all 0.3s;
-}
-
+/* Botón flotante WhatsApp con icono personalizado */
 .whatsapp-btn {
+  position: fixed;
   left: 20px;
-  background: #007BFF;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background: #fafcfa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp-btn:hover {
-  background: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
 }
 
+.whatsapp-btn .whatsapp-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Botón flotante "Pide Presupuesto" con icono propio */
 .presupuesto-btn {
+  position: fixed;
   right: 20px;
-  background: linear-gradient(135deg, #007BFF, #0056b3);
+  bottom: 20px;
+  width: 70px;
+  height: 70px;
+  background: #ffffff; /* fondo blanco limpio */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .presupuesto-btn:hover {
-  background: linear-gradient(135deg, #0056b3, #003f7f);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.presupuesto-btn .presupuesto-icon {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 /* ================================
