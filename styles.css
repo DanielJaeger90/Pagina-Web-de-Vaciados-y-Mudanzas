@@ -1,6 +1,6 @@
-/* ================================
-   Estilos Globales
-================================ */
+/* =======================================
+   RESET Y ESTILOS BASE
+========================================== */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: #222;
-  background-color: #007BFF; /* azul profesional */
+  background-color: #007BFF;
   line-height: 1.6;
 }
 
@@ -19,15 +19,13 @@ a {
   color: inherit;
 }
 
-/* ================================
-   Hero / Header Centrado Verticalmente
-================================ */
+/* =======================================
+   HERO / PORTADA
+========================================== */
 .hero {
   position: relative;
-  width: 100%;
   height: 350px;
-  background: url('hero/Vaciado y Mudanzas.jpg') no-repeat center center;
-  background-size: cover;
+  background: url('hero/Vaciado y Mudanzas.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +52,6 @@ a {
 
 .logo-hero {
   max-height: 200px;
-  width: auto;
 }
 
 .slogan-hero {
@@ -64,9 +61,9 @@ a {
   line-height: 1.2;
 }
 
-/* ================================
-   Menú de Recuadros
-================================ */
+/* =======================================
+   MENÚ RECUADROS
+========================================== */
 .menu-recuadros {
   background: #fff;
   padding: 10px 0;
@@ -77,28 +74,28 @@ a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  list-style: none;
   gap: 15px;
+  list-style: none;
 }
 
-.menu-recuadros li a {
+.menu-recuadros a {
   display: block;
   padding: 10px 15px;
   background: #007BFF;
   color: #fff;
-  font-weight: 600;
   border-radius: 8px;
+  font-weight: 600;
   transition: 0.3s;
 }
 
-.menu-recuadros li a:hover,
-.menu-recuadros li a.active {
+.menu-recuadros a:hover,
+.menu-recuadros a.active {
   background: #0056b3;
 }
 
-/* ================================
-   Secciones con recuadros blancos
-================================ */
+/* =======================================
+   SECCIONES GENERALES
+========================================== */
 main {
   max-width: 1200px;
   margin: 40px auto;
@@ -106,13 +103,13 @@ main {
 }
 
 main section {
-  background-color: #fff;
+  background: #fff;
   border-radius: 15px;
   padding: 30px 25px;
   margin: 40px auto;
   max-width: 1100px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.3s;
 }
 
 main section:hover {
@@ -128,60 +125,55 @@ main section h2 {
 
 main section p {
   color: #333;
-  font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 15px;
 }
 
-/* Sección SOBRE NOSOTROS con imagen lateral */
-.sobre-nosotros-section .sobre-nosotros-content {
+/* =======================================
+   SOBRE NOSOTROS
+========================================== */
+.sobre-nosotros-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-/* Texto */
 .sobre-texto {
   flex: 1;
   min-width: 280px;
 }
 
-/* Imagen con efecto levantado */
 .sobre-img {
   flex: 1;
   min-width: 250px;
   display: flex;
   justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sobre-img img {
   width: 70%;
   max-width: 280px;
-  object-fit: contain;
   border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* sombra inicial */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: 0.3s;
 }
 
 .sobre-img img:hover {
-  transform: translateY(-8px); /* se eleva ligeramente */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35); /* sombra más intensa */
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
-/* Bloque resaltado */
 .resaltado {
-  background: #ffffff;
+  background: #fff;
   padding: 18px 20px;
   border-left: 6px solid #007BFF;
   border-radius: 10px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin-top: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .resaltado:hover {
@@ -191,40 +183,29 @@ main section p {
 
 /* Móvil */
 @media (max-width: 768px) {
-  .sobre-nosotros-section .sobre-nosotros-content {
+  .sobre-nosotros-content {
     flex-direction: column;
     text-align: center;
   }
 
   .sobre-img img {
     width: 50%;
-    max-width: 240px;
   }
 }
 
-.conocenos-section {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 20px;
-}
-
-.conocenos-section h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #007BFF;
-}
-
+/* =======================================
+   CONÓCENOS
+========================================== */
 .conocenos-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
   background: #fff;
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .conocenos-container:hover {
@@ -237,35 +218,11 @@ main section p {
   min-width: 280px;
 }
 
-.conocenos-texto p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-
-.conocenos-texto .resaltado {
-  background: #f0f8ff;
-  padding: 15px 20px;
-  border-left: 6px solid #007BFF;
-  border-radius: 10px;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.conocenos-imagen {
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .conocenos-imagen img {
   max-width: 100%;
-  height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .conocenos-imagen img:hover {
@@ -273,18 +230,16 @@ main section p {
   box-shadow: 0 12px 35px rgba(0,0,0,0.25);
 }
 
-/* Responsivo para móviles */
 @media (max-width: 768px) {
   .conocenos-container {
     flex-direction: column;
     text-align: center;
   }
-
-  .conocenos-imagen {
-    margin-top: 20px;
-  }
 }
 
+/* =======================================
+   CONTACTO
+========================================== */
 .contacto-section {
   padding: 50px 20px;
   background: #f8f8f8;
@@ -294,22 +249,13 @@ main section p {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: space-between;
 }
 
-.contacto-info, 
-.contacto-formulario, 
+.contacto-info,
+.contacto-formulario,
 .contacto-mapa {
   flex: 1;
   min-width: 280px;
-}
-
-.contacto-intro {
-  margin-bottom: 20px;
-}
-
-.contacto-items {
-  margin-bottom: 20px;
 }
 
 .contacto-item {
@@ -327,9 +273,9 @@ main section p {
 .contacto-formulario textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  margin-bottom: 12px;
 }
 
 .btn-enviar {
@@ -337,186 +283,30 @@ main section p {
   padding: 12px;
   background: #009688;
   color: white;
-  border: none;
   border-radius: 5px;
-  cursor: pointer;
+  border: none;
 }
 
 .btn-enviar:hover {
   background: #007f73;
 }
 
-.contacto-mapa iframe {
-  border-radius: 10px;
-}
-
 .contacto-horario {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 25px;
   font-size: 1.2rem;
+  margin-top: 25px;
 }
 
-.icono-horario {
-  width: 50px;
-  height: 50px;
-}
-
-.horario {
+/* =======================================
+   SERVICIOS (CAJA + IMAGEN)
+========================================== */
+.servicios-content {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1rem;
-  margin-top: 5px;
-}
-
-.icono-horario-linea {
-  width: 30px;
-  height: 30px;
-  opacity: 0.9;
-}
-
-/* ================================
-   Servicios de Limpieza - Imagen lateral con efecto
-================================ */
-.servicios-section .servicios-content {
-  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* Lista de servicios */
-.servicios-section ul {
-  flex: 1;
-  min-width: 250px;
-  line-height: 1.8;
-  font-weight: 700;
-  padding-left: 20px;
-  list-style: disc;
-}
-
-/* Imagen lateral con efecto levantado */
-.servicios-img {
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servicios-img img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* sombra inicial */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servicios-img img:hover {
-  transform: translateY(-8px); /* se eleva ligeramente */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35); /* sombra más intensa */
-}
-
-/* Responsivo para móviles */
-@media (max-width: 768px) {
-  .servicios-section .servicios-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .servicios-img img {
-    width: 60%;
-    max-width: 250px;
-    margin-top: 20px;
-  }
-
-  .servicios-section ul {
-    padding-left: 0;
-    text-align: center;
-  }
-}
-
-/* ================================
-   Servicios de Limpieza - Caja de lista con efecto
-================================ */
-.servicios-section .servicios-content {
-  display: flex;
-  align-items: center; /* centra verticalmente la lista junto a la imagen */
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* Caja que contiene la lista */
-.servicios-lista {
-  flex: 1;
-  min-width: 250px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* sombra inicial */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servicios-lista:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* sombra más intensa al pasar el cursor */
-}
-
-/* Lista de servicios */
-.servicios-lista ul {
-  list-style: disc inside;
-  line-height: 1.8;
-  font-weight: 700;
-  text-align: left; /* puedes cambiar a center si quieres */
-  margin: 0;
-  padding: 0;
-}
-
-/* Imagen lateral con efecto levantado */
-.servicios-img {
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servicios-img img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* sombra inicial */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servicios-img img:hover {
-  transform: translateY(-8px); /* se eleva ligeramente */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35); /* sombra más intensa */
-}
-
-/* Responsivo para móviles */
-@media (max-width: 768px) {
-  .servicios-section .servicios-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .servicios-lista {
-    width: 80%;
-    margin: 0 auto 20px auto;
-  }
-
-  .servicios-img img {
-    width: 60%;
-    max-width: 250px;
-    margin-top: 20px;
-  }
 }
 
 .servicios-lista {
@@ -526,7 +316,7 @@ main section p {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .servicios-lista:hover {
@@ -535,33 +325,19 @@ main section p {
 }
 
 .servicios-lista ul {
-  list-style: disc;       /* marcador normal */
-  padding-left: 20px;     /* espacio entre el borde y el punto */
-  margin: 0;
+  list-style: disc;
+  padding-left: 20px;
   line-height: 1.8;
   font-weight: 700;
-  text-align: left;
-}
-
-.servicios-lista li {
-  margin-bottom: 10px;    /* espacio entre elementos */
-  text-indent: 0;         /* aseguramos que no hay sangría adicional */
-}
-.servicios-img {
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .servicios-img img {
-  width: 100%;
   max-width: 300px;
+  width: 100%;
   border-radius: 12px;
-  background-color: #fff;
+  background: #fff;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .servicios-img img:hover {
@@ -569,26 +345,31 @@ main section p {
   box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
+@media (max-width: 768px) {
+  .servicios-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-/* ──────────────────────────────── */
-/* Sección Por Qué Elegirnos con imagen lateral */
-/* ──────────────────────────────── */
+  .servicios-lista {
+    width: 80%;
+    margin: auto;
+  }
 
-.elegirnos-section {
-  margin-top: 50px;
+  .servicios-img img {
+    width: 60%;
+    margin: 20px auto 0;
+  }
 }
 
+/* =======================================
+   ELEGIRNOS (IMAGEN + TEXTO)
+========================================== */
 .elegirnos-content {
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
-}
-
-.elegirnos-img img {
-  width: 220px;
-  max-width: 100%;
+  justify-content: center;
 }
 
 .elegirnos-texto {
@@ -596,200 +377,86 @@ main section p {
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
 .elegirnos-texto h2 {
-  margin-bottom: 15px;
-  color: #007BFF; /* tu azul corporativo */
+  color: #007BFF;
 }
 
-/* Responsivo para móviles */
 @media (max-width: 768px) {
   .elegirnos-content {
     flex-direction: column;
     text-align: center;
   }
-
-  .elegirnos-img img {
-    width: 180px;
-  }
 }
 
-/* ================================
-   Mapa estilizado sección contacto
-================================ */
-.contacto-mapa {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.contacto-mapa h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #007BFF;
-}
-
-.mapa-container {
-  width: 100%;
-  height: 400px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-.mapa-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-
-/* ================================
-   Servicios con Imagen Lateral
-================================ */
-.servicios-section .servicios-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.servicios-section ul {
-  flex: 1;
-  min-width: 250px;
-  line-height: 1.8;
-  font-weight: 700;
-  padding-left: 0;           /* eliminar padding izquierdo */
-  list-style: disc inside;    /* los bullets se mantienen dentro del contenedor */
-  text-align: center;         /* centra el contenido */
-  margin: 0 auto;  
-}
-
-.servicios-img {
-  flex: 1;
-  min-width: 250px;
-}
-
-.servicios-img img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-
-/* ================================
-   Servicios con Imagen Lateral (Portes, Vaciados, Limpieza)
-================================ */
-.servicios-section .servicios-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.servicios-section ul {
-  flex: 1;
-  min-width: 250px;
-  line-height: 1.8;
-  font-weight: 700;
-  padding-left: 20px;
-  list-style: disc;
-}
-
-.servicios-img {
-  flex: 1;
-  min-width: 250px;
-}
-
-.servicios-img img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* ================================
-   Caja del slider / Galería Rotativa
-================================ */
-.galeria-section .slider-container {
+/* =======================================
+   GALERÍA (SLIDER)
+========================================== */
+.slider-container {
   position: relative;
   max-width: 700px;
   height: 700px;
-  width: 90%;
-  margin: 40px auto;       /* centrado */
+  margin: 40px auto;
   overflow: hidden;
   border-radius: 15px;
-  background-color: #007BFF;
+  background: #007BFF;
   padding: 15px;
-
-  /* Efecto levantado */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* sombra inicial */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
-/* Hover para que levite aún más */
-.galeria-section .slider-container:hover {
+.slider-container:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.35); /* sombra más grande y difusa */
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
 }
 
-
-.galeria-section .slider img {
+.slider img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) translateZ(0); /* centrado y render 3D */
+  transform: translate(-50%, -50%);
   max-width: 100%;
   max-height: 100%;
-  border-radius: 12px;
-  background-color: #fff;
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* sombra inicial */
+  border-radius: 12px;
+  transition: 0.5s ease, box-shadow 0.3s ease;
 }
 
-.galeria-section .slider img.active {
+.slider img.active {
   opacity: 1;
-  transform: translate(-50%, -50%) translateY(-10px); /* se eleva ligeramente */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35); /* sombra más grande y difusa */
+  transform: translate(-50%, -50%) translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
-
-/* Botones */
-.slider-prev, .slider-next {
+.slider-prev,
+.slider-next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
   font-size: 2rem;
+  background: rgba(0,0,0,0.5);
   padding: 10px 15px;
   border-radius: 50%;
+  color: #fff;
   cursor: pointer;
-  z-index: 10;
 }
 
 .slider-prev { left: 10px; }
 .slider-next { right: 10px; }
 
-/* Responsivo */
 @media (max-width: 768px) {
-  .slider-container { max-width: 95%; height: 400px; }
-  .slider-prev, .slider-next { font-size: 1.5rem; padding: 8px 12px; }
+  .slider-container { height: 400px; }
+  .slider-prev, .slider-next { font-size: 1.5rem; }
 }
 
 @media (max-width: 480px) {
   .slider-container { height: 300px; }
-  .slider-prev, .slider-next { font-size: 1.2rem; padding: 6px 10px; }
 }
 
-/* ================================
-   Formulario de Presupuesto
-================================ */
+/* =======================================
+   FORMULARIO PRESUPUESTO
+========================================== */
 #presupuesto-form {
   max-width: 600px;
   margin: 20px auto;
@@ -797,11 +464,6 @@ main section p {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-#presupuesto-form:hover {
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .form-group {
@@ -809,21 +471,18 @@ main section p {
 }
 
 .form-group label {
-  display: block;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #333;
+  display: block;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px 15px;
+  padding: 12px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 1rem;
   transition: 0.3s;
-  outline: none;
 }
 
 .form-group input:focus,
@@ -832,34 +491,25 @@ main section p {
   box-shadow: 0 0 8px rgba(0,123,255,0.3);
 }
 
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
 .btn-submit {
-  display: block;
   width: 100%;
   padding: 15px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  background-color: #FF5722;
+  background: #FF5722;
   border: none;
   border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  color: white;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
 .btn-submit:hover {
-  background-color: #e64a19;
+  background: #e64a19;
   transform: translateY(-2px);
 }
 
-/* ================================
-   Botones Flotantes
-================================ */
-/* Botón flotante WhatsApp con icono personalizado */
+/* =======================================
+   BOTÓN FLOTANTE WHATSAPP
+========================================== */
 .whatsapp-btn {
   position: fixed;
   left: 20px;
@@ -868,12 +518,12 @@ main section p {
   height: 60px;
   background: #fafcfa;
   border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
   z-index: 999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .whatsapp-btn:hover {
@@ -881,25 +531,57 @@ main section p {
   box-shadow: 0 6px 15px rgba(0,0,0,0.35);
 }
 
-.whatsapp-btn .whatsapp-icon {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+.whatsapp-icon {
+  width: 100%;
 }
 
-/* Botón flotante "Pide Presupuesto" con icono propio */
+/* ========================================
+   FIX: Restaurar proporción de imágenes
+   ======================================== */
+
+img {
+  max-width: 100%;
+  height: auto !important; 
+  object-fit: contain !important;
+}
+
+/* Fix específico para imágenes del héroe */
+.logo-hero {
+  width: 180px;
+  height: auto !important;
+}
+
+/* Fix para imágenes pequeñas de iconos */
+.contacto-item img,
+.icono-horario-linea {
+  width: 40px;
+  height: auto !important;
+}
+
+/* Fix para imágenes de las secciones */
+.sobre-img img,
+.elegirnos-img img {
+  width: 100%;
+  max-width: 350px;
+  height: auto !important;
+  object-fit: contain;
+}
+/* ========================================
+   FIX: Botón flotante "Pide Presupuesto"
+   ======================================== */
+
 .presupuesto-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
   width: 70px;
   height: 70px;
-  background: #ffffff; /* fondo blanco limpio */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
   z-index: 999;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -909,29 +591,63 @@ main section p {
   box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
+/* Imagen dentro del botón */
 .presupuesto-btn .presupuesto-icon {
   width: 55px;
   height: 55px;
-  object-fit: contain;
+  object-fit: contain !important; /* evita deformación */
   border-radius: 8px;
 }
 
-/* ================================
-   Animaciones / Fade In
-================================ */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+/* ==============================
+   Mapa sección contacto - corregido
+============================== */
+.contacto-mapa {
+  max-width: 1100px;       /* ancho máximo */
+  margin: 50px auto;       /* centrado */
+  padding: 0;              /* eliminamos padding que encoge el mapa */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.fade-in-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.contacto-mapa h3 {
+  text-align: center;
+  margin: 20px 0;
+  color: #007BFF;
+}
+
+/* Contenedor del iframe */
+.mapa-container {
+  width: 100%;
+  height: 500px;           /* antes 400px, ahora más grande */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* El iframe ocupa todo el contenedor */
+.mapa-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mapa-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapa-container {
+    height: 300px;
+  }
 }
 
 /* ================================
-   Sección FAQ
+   SECCIÓN FAQ - acordeón
 ================================ */
 .faq-section {
   max-width: 1100px;
@@ -974,60 +690,9 @@ main section p {
   font-weight: bold;
 }
 
-/* Respuesta (cerrada por defecto) */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  padding: 0 1rem;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-/* Respuesta abierta */
-.faq-answer.open {
-  padding: 1rem;
-  max-height: 500px; /* suficiente para cualquier texto */
-}
-
-
-
-/* ================================
-   Responsivo
-================================ */
-@media (max-width: 768px) {
-  .logo-hero {
-    max-height: 120px;
-  }
-  .slogan-hero {
-    font-size: 1.8rem;
-  }
-  .servicios-section .servicios-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .servicios-section ul {
-    padding-left: 0;
-    text-align: center;
-  }
-  main section {
-    padding: 25px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 200px;
-  }
-  .logo-hero {
-    max-height: 80px;
-  }
-  .slogan-hero {
-    font-size: 1.3rem;
-  }
-  main section {
-    padding: 20px 10px;
-  }
-  .whatsapp-btn, .presupuesto-btn {
-    font-size: 16px;
-    padding: 10px 14px;
-  }
+  padding: 0 1rem; /* solo horizontal */
+  transition: max-height 0.4s ease;
 }

@@ -49,52 +49,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===============================
-// FAQ - Acordeón suave
 // ===============================
-document.addEventListener("DOMContentLoaded", () => {
+// FAQ - Acordeón
+// ===============================
+const faqItems = document.querySelectorAll('.faq-item');
 
-  const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
 
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
+  // Ocultar por defecto
+  answer.style.maxHeight = "0px";
 
-    // Ocultar por defecto
-    answer.style.maxHeight = "0px";
+  question.addEventListener('click', () => {
 
-    question.addEventListener('click', () => {
+    const isOpen = answer.classList.contains('open');
 
-      const isOpen = answer.classList.contains('open');
+    // Cerrar todos los demás
+    faqItems.forEach(other => {
+      const otherAnswer = other.querySelector('.faq-answer');
+      const otherQuestion = other.querySelector('.faq-question');
 
-      // Cerrar todos los demás
-      faqItems.forEach(other => {
-        const otherAnswer = other.querySelector('.faq-answer');
-        const otherQuestion = other.querySelector('.faq-question');
-
-        if (otherAnswer !== answer) {
-          otherAnswer.classList.remove('open');
-          otherAnswer.style.maxHeight = "0px";
-          otherQuestion.classList.remove('active');
-        }
-      });
-
-      // Alternar actual
-      if (!isOpen) {
-        answer.classList.add('open');
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        question.classList.add('active');
-      } else {
-        answer.classList.remove('open');
-        answer.style.maxHeight = "0px";
-        question.classList.remove('active');
+      if (otherAnswer !== answer) {
+        otherAnswer.classList.remove('open');
+        otherAnswer.style.maxHeight = "0px";
+        otherQuestion.classList.remove('active');
       }
     });
+
+    // Alternar actual
+    if (!isOpen) {
+      answer.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      question.classList.add('active');
+    } else {
+      answer.classList.remove('open');
+      answer.style.maxHeight = "0px";
+      question.classList.remove('active');
+    }
   });
-
 });
-
-
 
   // =================================
   // 4. Sliders de galería (Mudanzas y Limpieza)
