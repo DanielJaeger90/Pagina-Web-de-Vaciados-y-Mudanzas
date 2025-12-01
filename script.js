@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const nombre = document.getElementById('nombre').value.trim();
       const email = document.getElementById('email').value.trim();
-      const telefono = document.getElementById('telefono').value.trim(); // opcional
+      const telefono = document.getElementById('telefono').value.trim();
       const mensaje = document.getElementById('mensaje').value.trim();
 
       if (!nombre || !email || !mensaje) {
@@ -64,36 +64,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // =================================
   // 4. Sliders de galería (Mudanzas y Limpieza)
   // =================================
-  const sliders = document.querySelectorAll('.slider-container');
+const sliderContainer = document.querySelector('.slider-container');
+const slides = sliderContainer.querySelectorAll('.slider img');
+const prevBtn = sliderContainer.querySelector('.slider-prev');
+const nextBtn = sliderContainer.querySelector('.slider-next');
+let currentIndex = 0;
 
-  sliders.forEach(container => {
-    const slider = container.querySelector('.slider');
-    const prevBtn = container.querySelector('.slider-prev');
-    const nextBtn = container.querySelector('.slider-next');
-    let currentIndex = 0;
-    const slides = slider.querySelectorAll('img');
-    const totalSlides = slides.length;
-
-    // Inicializar posición
-    function updateSlider() {
-      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateSlider();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlider();
-    });
-
-    // Auto-play opcional (descomentarlo si quieres)
-    // setInterval(() => {
-    //   currentIndex = (currentIndex + 1) % totalSlides;
-    //   updateSlider();
-    // }, 5000);
+function showSlide(index) {
+  slides.forEach((img, i) => {
+    img.classList.toggle('active', i === index);
   });
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+});
+
+// Auto-play opcional
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}, 4000);
 
 });
