@@ -4,9 +4,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ================================
+  // ========================================
   // 1. Fade-in al hacer scroll
-  // ================================
+  // ========================================
   const fadeSections = document.querySelectorAll('.fade-in-section');
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -16,15 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, { threshold: 0.2 });
+
   fadeSections.forEach(section => observer.observe(section));
 
-  // ================================
+  // ========================================
   // 2. Formulario de presupuesto
-  // ================================
+  // ========================================
   const form = document.getElementById('presupuesto-form');
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+
       const nombre = document.getElementById('nombre').value.trim();
       const email = document.getElementById('email').value.trim();
       const telefono = document.getElementById('telefono').value.trim();
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      // Aquí podrías enviar los datos con fetch/ajax a tu servidor
       console.log({ nombre, email, telefono, mensaje });
 
       const formMessage = document.getElementById('form-message');
@@ -46,14 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ================================
+  // ========================================
   // 3. FAQ - acordeón suave
-  // ================================
+  // ========================================
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
-
     answer.style.maxHeight = "0px"; // ocultar por defecto
 
     question.addEventListener('click', () => {
@@ -83,9 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ================================
-  // 4. Sliders
-  // ================================
+  // ========================================
+  // 4. Sliders / Galería
+  // ========================================
   const sliders = document.querySelectorAll('.slider-container');
   sliders.forEach(container => {
     const slides = container.querySelectorAll('.slider img');
@@ -99,21 +101,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    prevBtn?.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    });
+    // Botones prev/next
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+    }
 
-    nextBtn?.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    });
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+    }
 
+    // Autoplay
     setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       showSlide(currentIndex);
     }, 4000);
 
+    // Mostrar la primera imagen
     showSlide(currentIndex);
   });
 

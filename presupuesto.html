@@ -6,7 +6,11 @@
   <meta name="description" content="Solicita tu presupuesto sin compromiso en Vaciados y Mudanzas Miranda. Formulario de contacto rápido y sencillo.">
   <meta name="keywords" content="presupuesto, contacto, vaciados, mudanzas, Miranda de Ebro, formulario, sin compromiso">
   <title>Presupuesto - Vaciados y Mudanzas Miranda</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,15 +34,17 @@
       <li><a href="vaciados.html">Vaciados</a></li>
       <li><a href="portes.html">Portes</a></li>
       <li><a href="mudanzas.html">Mudanzas</a></li>
-      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="presupuesto.html" class="active">Presupuesto</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
   </nav>
 
   <main>
+    <!-- FORMULARIO DE PRESUPUESTO -->
     <section class="fade-in-section">
       <h2>Formulario de Presupuesto</h2>
-      <p>Completa el siguiente formulario y nuestro equipo se pondrá en contacto contigo lo antes posible. Todos los campos son obligatorios, excepto el teléfono, que es opcional.</p>
-      
+      <p>Completa el siguiente formulario y nuestro equipo se pondrá en contacto contigo lo antes posible. Todos los campos marcados con * son obligatorios.</p>
+
       <form id="presupuesto-form">
         <div class="form-group">
           <label for="nombre">Nombre completo*</label>
@@ -60,7 +66,7 @@
           <textarea id="mensaje" name="mensaje" required placeholder="Describe tu solicitud"></textarea>
         </div>
 
-        <button type="submit" class="btn-submit">Solicitar Presupuesto</button>
+        <button type="submit" class="btn-enviar">Solicitar Presupuesto</button>
       </form>
 
       <p id="form-message" style="margin-top:15px; color:green;"></p>
@@ -76,41 +82,7 @@
     <img src="logo/LogoVaciadosyMudanzasMiranda.png" alt="Presupuesto" class="presupuesto-icon">
   </a>
 
-  <!-- Script para animación fade-in y formulario -->
-  <script>
-    // ================================
-    // Animación Fade In
-    // ================================
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll('.fade-in-section');
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      sections.forEach(section => observer.observe(section));
-    });
-
-    // ================================
-    // Manejo de formulario
-    // ================================
-    document.getElementById('presupuesto-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const nombre = document.getElementById('nombre').value;
-      const email = document.getElementById('email').value;
-      const telefono = document.getElementById('telefono').value;
-      const mensaje = document.getElementById('mensaje').value;
-
-      console.log({ nombre, email, telefono, mensaje });
-
-      document.getElementById('form-message').textContent = "Gracias, tu solicitud ha sido enviada correctamente.";
-
-      this.reset();
-    });
-  </script>
+  <!-- Script -->
+  <script src="script.js" defer></script>
 </body>
 </html>

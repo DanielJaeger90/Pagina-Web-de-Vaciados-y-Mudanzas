@@ -43,7 +43,6 @@
       <li><a href="vaciados.html">Vaciados</a></li>
       <li><a href="portes.html">Portes</a></li>
       <li><a href="mudanzas.html">Mudanzas</a></li>
-      <li><a href="faq.html">FAQ</a></li>
     </ul>
   </nav>
 
@@ -61,7 +60,6 @@
     <section class="fade-in-section servicios-section" aria-labelledby="servicios-limpieza">
       <h2 id="servicios-limpieza">Nuestros Servicios de Limpieza</h2>
       <div class="servicios-content">
-
         <div class="servicios-lista">
           <ul>
             <li>Limpieza integral de pisos y viviendas</li>
@@ -72,20 +70,18 @@
             <li>Limpieza especializada en muebles y electrodomésticos</li>
           </ul>
         </div>
-
         <div class="servicios-img">
           <img src="images/limpieza.jpg" alt="Equipo realizando limpieza profesional en Miranda de Ebro">
         </div>
-
       </div>
     </section>
 
-    <!-- Por qué elegirnos -->
-    <section class="galeria-section fade-in-section" aria-labelledby="por-que-elegirnos">
-      <h2 id="por-que-elegirnos">Por Qué Elegirnos</h2>
+    <!-- Galería / Slider -->
+    <section class="galeria-section fade-in-section" aria-labelledby="galeria-limpieza">
+      <h2 id="galeria-limpieza">Nuestra Galería de Limpieza</h2>
       <div class="slider-container">
         <div class="slider">
-          <img src="images/limpieza1.jpg" alt="Limpieza de pisos">
+          <img src="images/limpieza1.jpg" alt="Limpieza de pisos" class="active">
           <img src="images/limpieza2.jpg" alt="Limpieza de oficinas">
           <img src="images/limpieza3.jpg" alt="Limpieza de locales comerciales">
           <img src="images/limpieza4.jpg" alt="Limpieza especializada de superficies">
@@ -96,7 +92,78 @@
       </div>
     </section>
 
+    <!-- Contacto -->
+    <section class="contacto-section fade-in-section" aria-labelledby="contacto-limpieza">
+      <h2 id="contacto-limpieza">Contacto y Presupuesto</h2>
+      <div class="contacto-contenedor">
+
+        <!-- Información de contacto -->
+        <div class="contacto-info">
+          <div class="contacto-item">
+            <img src="images/iconowhatsapp.png" alt="Teléfono">
+            <span>+34 666 774 030</span>
+          </div>
+          <div class="contacto-item">
+            <img src="images/correo.png" alt="Correo">
+            <span>info@vaciadosymudanzasmiranda.es</span>
+          </div>
+          <div class="contacto-item contacto-horario">
+            <img src="images/24horas.png" alt="Horario">
+            <span>Lunes a Domingo: 00:00 - 23:59</span>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="contacto-formulario">
+          <form id="presupuesto-form">
+            <div id="form-message" style="margin-bottom:10px;color:green;"></div>
+            <div class="form-group">
+              <label for="nombre">Nombre*</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono">
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje*</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Mapa -->
+      <div class="contacto-mapa">
+        <div class="mapa-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.349745307574!2d-2.949806!3d42.685800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd44f8a7cfd3a7a9%3A0x0!2sMonumento%20M%20Miranda%20de%20Ebro!5e0!3m2!1ses!2ses!4v0000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </section>
+
   </main>
+    <!-- Footer -->
+    <footer class="footer-section fade-in-section">
+      <div class="footer-content">
+        <p>&copy; 2025 Vaciados y Mudanzas Miranda. Todos los derechos reservados.</p>
+        <p>
+          <a href="index.html">Inicio</a> | 
+          <a href="conocenos.html">Conócenos</a> | 
+          <a href="limpieza.html">Limpieza</a> | 
+          <a href="vaciados.html">Vaciados</a> | 
+          <a href="portes.html">Portes</a> | 
+          <a href="mudanzas.html">Mudanzas</a> | 
+          <a href="faq.html">FAQ</a>
+        </p>
+      </div>
+    </footer>
 
   <!-- BOTONES FLOTANTES -->
   <a class="whatsapp-btn" href="https://wa.me/34666774030" target="_blank" aria-label="Contactar por WhatsApp">
