@@ -49,47 +49,88 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =================================
-  // 3. FAQ - Preguntas frecuentes
-  // =================================
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(question => {
+  // ===============================
+// FAQ - Acordeón suave
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    // Ocultar por defecto
+    answer.style.maxHeight = "0px";
+
     question.addEventListener('click', () => {
-      question.classList.toggle('active');
-      const answer = question.nextElementSibling;
-      answer.classList.toggle('open');
+
+      const isOpen = answer.classList.contains('open');
+
+      // Cerrar todos los demás
+      faqItems.forEach(other => {
+        const otherAnswer = other.querySelector('.faq-answer');
+        const otherQuestion = other.querySelector('.faq-question');
+
+        if (otherAnswer !== answer) {
+          otherAnswer.classList.remove('open');
+          otherAnswer.style.maxHeight = "0px";
+          otherQuestion.classList.remove('active');
+        }
+      });
+
+      // Alternar actual
+      if (!isOpen) {
+        answer.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        question.classList.add('active');
+      } else {
+        answer.classList.remove('open');
+        answer.style.maxHeight = "0px";
+        question.classList.remove('active');
+      }
     });
   });
+
+});
+
+
 
   // =================================
   // 4. Sliders de galería (Mudanzas y Limpieza)
   // =================================
-const sliderContainer = document.querySelector('.slider-container');
-const slides = sliderContainer.querySelectorAll('.slider img');
-const prevBtn = sliderContainer.querySelector('.slider-prev');
-const nextBtn = sliderContainer.querySelector('.slider-next');
-let currentIndex = 0;
+  const sliders = document.querySelectorAll('.slider-container');
 
-function showSlide(index) {
-  slides.forEach((img, i) => {
-    img.classList.toggle('active', i === index);
+  sliders.forEach(container => {
+    const slides = container.querySelectorAll('.slider img');
+    const prevBtn = container.querySelector('.slider-prev');
+    const nextBtn = container.querySelector('.slider-next');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    // Auto-play opcional
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 4000);
+
+    // Mostrar la primera slide
+    showSlide(currentIndex);
   });
-}
-
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(currentIndex);
-});
-
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-});
-
-// Auto-play opcional
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}, 4000);
 
 });

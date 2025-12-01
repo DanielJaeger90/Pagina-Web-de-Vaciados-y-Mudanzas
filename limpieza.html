@@ -3,10 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Servicios de limpieza profesional en Miranda de Ebro. Limpieza integral de pisos, oficinas, locales y traslados.">
-  <meta name="keywords" content="limpieza, limpieza profesional, limpieza integral, Miranda de Ebro, pisos, oficinas, locales">
-  <title>Limpieza Profesional - Vaciados y Mudanzas Miranda</title>
+
+  <!-- SEO básico -->
+  <title>Limpieza Profesional en Miranda de Ebro - Vaciados y Mudanzas Miranda</title>
+  <meta name="description" content="Servicios de limpieza profesional en Miranda de Ebro. Limpieza integral de pisos, oficinas, locales y traslados. Equipo confiable y resultados impecables.">
+  <meta name="keywords" content="limpieza, limpieza profesional, limpieza integral, Miranda de Ebro, pisos, oficinas, locales, vaciados">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Limpieza Profesional - Vaciados y Mudanzas Miranda">
+  <meta property="og:description" content="Ofrecemos limpieza profesional de pisos, oficinas y locales en Miranda de Ebro. Servicio rápido, seguro y adaptado a tus necesidades.">
+  <meta property="og:image" content="logo/LogoVaciadosyMudanzasMiranda.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.vaciadosymudanzasmiranda.es/limpieza.html">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS externo -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,30 +34,32 @@
     </div>
   </header>
 
-  <!-- MENÚ DE RECUADROS -->
+  <!-- MENÚ -->
   <nav class="menu-recuadros" role="navigation">
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="conocenos.html">Conócenos</a></li>
-      <li><a href="limpieza.html">Limpieza</a></li>
+      <li><a href="limpieza.html" class="active">Limpieza</a></li>
       <li><a href="vaciados.html">Vaciados</a></li>
       <li><a href="portes.html">Portes</a></li>
       <li><a href="mudanzas.html">Mudanzas</a></li>
-      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
   </nav>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
+
     <!-- Sección de Introducción -->
-    <section class="fade-in-section">
-      <h2>Limpieza Integral y Profesional</h2>
+    <section class="fade-in-section" aria-labelledby="introduccion-limpieza">
+      <h2 id="introduccion-limpieza">Limpieza Integral y Profesional</h2>
       <p>Ofrecemos servicios de limpieza profesional para hogares, oficinas, locales comerciales y espacios de traslado en <strong>Miranda de Ebro</strong>. Nuestro equipo garantiza resultados impecables y atención a cada detalle.</p>
       <p>Utilizamos productos y herramientas de calidad, respetando el medio ambiente y asegurando un espacio limpio y seguro.</p>
     </section>
 
     <!-- Servicios de Limpieza con imagen lateral -->
-    <section class="fade-in-section servicios-section">
-      <h2>Nuestros Servicios de Limpieza</h2>
+    <section class="fade-in-section servicios-section" aria-labelledby="servicios-limpieza">
+      <h2 id="servicios-limpieza">Nuestros Servicios de Limpieza</h2>
       <div class="servicios-content">
 
         <div class="servicios-lista">
@@ -59,28 +74,29 @@
         </div>
 
         <div class="servicios-img">
-          <img src="images/limpieza.jpg" alt="Limpieza profesional en Miranda de Ebro">
+          <img src="images/limpieza.jpg" alt="Equipo realizando limpieza profesional en Miranda de Ebro">
         </div>
 
       </div>
     </section>
-
 
     <!-- Por qué elegirnos -->
-    <section class="galeria-section fade-in-section">
-      <h2>Por Qué Elegirnos</h2>
+    <section class="galeria-section fade-in-section" aria-labelledby="por-que-elegirnos">
+      <h2 id="por-que-elegirnos">Por Qué Elegirnos</h2>
       <div class="slider-container">
         <div class="slider">
-          <img src="images/limpieza1.jpg" alt="Limpieza 1">
-          <img src="images/limpieza2.jpg" alt="Limpieza 2">
-          <img src="images/limpieza3.jpg" alt="Limpieza 3">
-          <img src="images/limpieza4.jpg" alt="Limpieza 4">
-          <img src="logo/LogoVaciadosyMudanzasMiranda.png" alt="Limpieza 6">
+          <img src="images/limpieza1.jpg" alt="Limpieza de pisos">
+          <img src="images/limpieza2.jpg" alt="Limpieza de oficinas">
+          <img src="images/limpieza3.jpg" alt="Limpieza de locales comerciales">
+          <img src="images/limpieza4.jpg" alt="Limpieza especializada de superficies">
+          <img src="logo/LogoVaciadosyMudanzasMiranda.png" alt="Logo de la empresa">
         </div>
-        <div class="slider-prev">&#10094;</div>
-        <div class="slider-next">&#10095;</div>
+        <div class="slider-prev" aria-label="Anterior">&#10094;</div>
+        <div class="slider-next" aria-label="Siguiente">&#10095;</div>
       </div>
     </section>
+
+  </main>
 
   <!-- BOTONES FLOTANTES -->
   <a class="whatsapp-btn" href="https://wa.me/34666774030" target="_blank" aria-label="Contactar por WhatsApp">
@@ -91,6 +107,29 @@
     <img src="logo/LogoVaciadosyMudanzasMiranda.png" alt="Presupuesto" class="presupuesto-icon">
   </a>
 
+  <!-- Datos estructurados para SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Vaciados y Mudanzas Miranda",
+    "image": "https://www.vaciadosymudanzasmiranda.es/logo/LogoVaciadosyMudanzasMiranda.png",
+    "telephone": "+34666774030",
+    "email": "info@vaciadosymudanzasmiranda.es",
+    "url": "https://www.vaciadosymudanzasmiranda.es/limpieza.html",
+    "description": "Servicios de limpieza profesional en Miranda de Ebro. Limpieza integral de pisos, oficinas, locales y traslados.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miranda de Ebro",
+      "addressRegion": "Burgos",
+      "postalCode": "09200",
+      "streetAddress": "Plaza Prim, 09200 Miranda de Ebro, España"
+    },
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+  </script>
+
+  <!-- JS externo -->
   <script src="script.js" defer></script>
 </body>
 </html>
